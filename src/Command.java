@@ -37,8 +37,6 @@ public class Command {
         case EXIT:
           System.out.println("exit ..");
           break;
-        case NONE:
-          break;
         default:
           break;
       }
