@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Command {
 
   enum Action {
@@ -7,7 +9,9 @@ public class Command {
   public static void Start() {
     Action action = Action.NONE;
     while (action != Action.EXIT) {
-
+      Scanner scanner = new Scanner(System.in);
+      String str = scanner.nextLine();
+      scanner.close();
     }
   }
 }
