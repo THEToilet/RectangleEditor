@@ -34,6 +34,10 @@ public class Command {
         case SHRINK:
           break;
         case DELETE:
+          Board.showRectangles();
+          System.out.println("Please Input Num");
+          int num = scanner.nextInt();
+          
           break;
         case DELETEALL:
           break;
