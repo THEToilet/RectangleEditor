@@ -19,6 +19,12 @@ public class Command {
 
       switch (action) {
         case CREATE:
+          System.out.println("Please Input x y width height");
+          int x = scanner.nextInt();
+          int y = scanner.nextInt();
+          int width = scanner.nextInt();
+          int height = scanner.nextInt();
+          Rectangle rectangle = new Rectangle(x, y, width, height);
           break;
         case MOVE:
           break;
