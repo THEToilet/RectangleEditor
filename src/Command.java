@@ -27,6 +27,7 @@ public class Command {
           int height = scanner.nextInt();
           Rectangle rectangle = new Rectangle(x, y, width, height);
           Board.addRectangle(rectangle);
+          System.out.println("SUCCSESS");
           break;
         case MOVE:
           break;
@@ -48,11 +49,11 @@ public class Command {
           break;
         case EXIT:
           System.out.println("exit ..");
+          scanner.close();
           break;
         default:
           break;
       }
-      scanner.close();
     }
   }
 
