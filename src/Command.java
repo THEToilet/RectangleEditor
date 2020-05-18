@@ -15,7 +15,7 @@ public class Command {
       System.out.printf(acString);
       System.out.printf(">> ");
       Scanner scanner = new Scanner(System.in);
-      String str = scanner.nextLine();
+      int ac = scanner.nextInt();
 
       switch (action) {
         case CREATE:
@@ -51,8 +51,6 @@ public class Command {
         default:
           break;
       }
-
-      System.out.println(str);
       scanner.close();
     }
   }

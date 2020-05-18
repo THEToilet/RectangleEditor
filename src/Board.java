@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Board {
-  public static ArrayList<Rectangle> rectangles = new ArrayList<>();
+  public static ArrayList<Rectangle> rectangles = new ArrayList<>(10);
 
   public static void addRectangle(Rectangle rectangle) {
     rectangles.add(rectangle);
