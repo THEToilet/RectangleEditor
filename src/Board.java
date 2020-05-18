@@ -7,10 +7,10 @@ public class Board {
     rectangles.add(rectangle);
   }
 
-  public void showRectangles(){
-    for (int i = 0 ; i < rectangles.size() ; i++){
+  public void showRectangles() {
+    for (int i = 0; i < rectangles.size(); i++) {
       String rectangleString = (rectangles.get(i)).show();
-      System.out.println(rectangleString);
+      System.out.printf("%d : %s", i, rectangleString);
     }
   }
 
