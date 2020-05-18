@@ -40,6 +40,7 @@ public class Command {
           System.out.println("Please Input Num");
           int num = scanner.nextInt();
           Board.deleteRectangle(num);
+          System.out.println("SUCCSESS");
           break;
         case DELETEALL:
           break;
@@ -74,6 +75,9 @@ public class Command {
         break;
       case 4:
         tmp = Action.DELETE;
+        break;
+      case 8:
+        tmp = Action.EXIT;
         break;
     }
 
