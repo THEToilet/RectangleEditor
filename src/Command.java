@@ -37,7 +37,7 @@ public class Command {
           Board.showRectangles();
           System.out.println("Please Input Num");
           int num = scanner.nextInt();
-          
+          Board.deleteRectangle(num);
           break;
         case DELETEALL:
           break;
