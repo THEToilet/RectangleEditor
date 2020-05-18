@@ -25,7 +25,7 @@ public class Command {
           int width = scanner.nextInt();
           int height = scanner.nextInt();
           Rectangle rectangle = new Rectangle(x, y, width, height);
-          
+          Board.addRectangle(rectangle);
           break;
         case MOVE:
           break;
