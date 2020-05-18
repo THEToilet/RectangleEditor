@@ -10,7 +10,7 @@ public class Board {
   public static void showRectangles() {
     for (int i = 0; i < rectangles.size(); i++) {
       String rectangleString = (rectangles.get(i)).show();
-      System.out.printf("%d : %s", i, rectangleString);
+      System.out.printf("%d : %s\n", i, rectangleString);
     }
   }
 
