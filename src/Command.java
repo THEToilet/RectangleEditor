@@ -73,7 +73,7 @@ public class Command {
         tmp = Action.DISPLAYBOARD;
         break;
       case 4:
-        tmp = Action.EXIT;
+        tmp = Action.DELETE;
         break;
     }
 
