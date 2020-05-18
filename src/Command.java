@@ -4,7 +4,7 @@ public class Command {
     NONE, CREATE, MOVE, EXPAND, SHRINK, DELETE, DELETEALL, INTERSEC, DISPLAYBOARD, EXIT
   }
 
-  public void Start() {
+  public static void Start() {
     Action action = Action.NONE;
     while (action != Action.EXIT) {
 
