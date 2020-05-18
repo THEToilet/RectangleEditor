@@ -16,6 +16,7 @@ public class Command {
       System.out.printf(">> ");
       Scanner scanner = new Scanner(System.in);
       int ac = scanner.nextInt();
+      action = getActions(ac);
 
       switch (action) {
         case CREATE:
@@ -53,5 +54,28 @@ public class Command {
       }
       scanner.close();
     }
+  }
+
+  private static Action getActions(int num) {
+    Action tmp = Action.NONE;
+    switch (num) {
+      case 0:
+        tmp = Action.CREATE;
+        break;
+      case 1:
+        tmp = Action.DELETE;
+        break;
+      case 2:
+        tmp = Action.DELETEALL;
+        break;
+      case 3:
+        tmp = Action.DISPLAYBOARD;
+        break;
+      case 4:
+        tmp = Action.EXIT;
+        break;
+    }
+
+    return tmp;
   }
 }
