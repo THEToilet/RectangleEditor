@@ -15,7 +15,7 @@ public class Command {
       System.out.printf(acString);
       System.out.printf(">> ");
       Scanner scanner = new Scanner(System.in);
-      String ac = scanner.nextline();
+      String ac = scanner.nextLine();
       action = Action.valueOf(ac);
 
       switch (action) {
