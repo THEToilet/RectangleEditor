@@ -47,6 +47,7 @@ public class Command {
         case INTERSEC:
           break;
         case DISPLAYBOARD:
+          Board.showRectangles();
           break;
         case EXIT:
           System.out.println("exit ..");

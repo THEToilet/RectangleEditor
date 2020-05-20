@@ -15,7 +15,7 @@ public class Board {
   }
 
   public static void deleteRectangle(int num) {
-    rectangles.remove(num + 1);
+    rectangles.remove(num);
   }
 
 }
