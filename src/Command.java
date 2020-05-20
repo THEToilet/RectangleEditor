@@ -7,7 +7,7 @@ public class Command {
   }
 
   public static void Start() {
-    String acString = "0:CREATE 1:MOVE 2:EXPAND 3:SHRINK 4:DELETE\n 5:DELETEALL 6:INTERSEC 7:DISPLAYBOARD 8: EXIT\n";
+    String acString = "CREATE MOVE EXPAND SHRINK DELETE\nDELETEALL INTERSEC DISPLAYBOARD EXIT\n";
 
     Action action = Action.NONE;
 
@@ -15,8 +15,8 @@ public class Command {
       System.out.printf(acString);
       System.out.printf(">> ");
       Scanner scanner = new Scanner(System.in);
-      int ac = scanner.nextInt();
-      action = getActions(ac);
+      String ac = scanner.nextline();
+      action = Action.valueOf(ac);
 
       switch (action) {
         case CREATE:
@@ -58,29 +58,4 @@ public class Command {
     }
   }
 
-  private static Action getActions(int num) {
-    Action tmp = Action.NONE;
-    switch (num) {
-      case 0:
-        tmp = Action.CREATE;
-        break;
-      case 1:
-        tmp = Action.DELETE;
-        break;
-      case 2:
-        tmp = Action.DELETEALL;
-        break;
-      case 3:
-        tmp = Action.DISPLAYBOARD;
-        break;
-      case 4:
-        tmp = Action.DELETE;
-        break;
-      case 8:
-        tmp = Action.EXIT;
-        break;
-    }
-
-    return tmp;
-  }
 }
