@@ -46,7 +46,11 @@ public class Command {
           }
           Rectangle rectangle = new Rectangle(x, y, width, height, new Color(c));
           if (Board.isItOverTheBoard(rectangle)) {
-            System.out.println("NOT SUCCSESS");
+            System.out.println("It's out of range.");
+            break;
+          } else if (Board.hasSameRectangles(rectangle)) {
+            System.out.println("There's the same rectangle.");
+            break;
           }
           Board.addRectangle(rectangle);
           System.out.println("SUCCSESS");
@@ -69,6 +73,11 @@ public class Command {
           Board.getRectangl(n).move(x0, y0);
           if (Board.isItOverTheBoard(tmpr)) {
             Board.getRectangl(n).move(-1 * x0, -1 * y0);
+            System.out.println("It's out of range.");
+          } else if (Board.hasSameRectangles(tmpr)) {
+            Board.getRectangl(n).move(-1 * x0, -1 * y0);
+            System.out.println("There's the same rectangle.");
+            break;
           }
           break;
         case EXPAND:
@@ -89,6 +98,9 @@ public class Command {
           Board.getRectangl(nu).expand(mx, my);
           if (Board.isItOverTheBoard(tr)) {
             Board.getRectangl(nu).expand(1 / mx, 1 / my);
+          } else if (Board.hasSameRectangles(tr)) {
+            Board.getRectangl(nu).expand(1 / mx, 1 / my);
+            System.out.println("There's the same rectangle.");
           }
           break;
         case SHRINK:

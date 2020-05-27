@@ -7,12 +7,13 @@ public class Utility {
     if (isOverlapping(r1, r2)) {
       Rectangle rectangle = new Rectangle(Math.max(r1.x, r2.x), Math.min(r1.y, r2.y), Math.abs(Math.max(r1.x, r2.x)),
           Math.abs(Math.max(r1.x, r2.x)), new Color(combineColors(r1.color, r2.color)));
-      System.out.println("Yes");
       Board.deleteRectangle(rec1);
       Board.deleteRectangle(rec2 - 1);
       Board.addRectangle(rectangle);
+      System.out.println("It worked.");
+    } else {
+      System.out.println("It didn't work.");
     }
-    System.out.println("Oh");
   }
 
   public static boolean isOverlapping(Rectangle rec1, Rectangle rec2) {
