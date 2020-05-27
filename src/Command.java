@@ -25,7 +25,8 @@ public class Command {
           int y = scanner.nextInt();
           int width = scanner.nextInt();
           int height = scanner.nextInt();
-          String c = scanner.nextLine();
+          String bc = scanner.nextLine();
+          Color c = new Color(bc);
           Rectangle rectangle = new Rectangle(x, y, width, height, c);
           Board.addRectangle(rectangle);
           System.out.println("SUCCSESS");

@@ -5,8 +5,8 @@ public class Utility {
     Rectangle r1 = Board.getRectangl(rec1);
     Rectangle r2 = Board.getRectangl(rec2);
     if (isOverlapping(r1, r2)) {
-      Rectangle rectangle = new Rectangle(Math.max(r1.x, r2.x), Math.min(r1.y, r2.y), Math.abs(Math.max(r1.x, r2.x)), Math.abs(Math.max(r1.x, r2.x)),
-          combineColors(r1.color, r2.color));
+      Rectangle rectangle = new Rectangle(Math.max(r1.x, r2.x), Math.min(r1.y, r2.y), Math.abs(Math.max(r1.x, r2.x)),
+          Math.abs(Math.max(r1.x, r2.x)), combineColors(r1.color, r2.color));
       Board.deleteRectangle(rec1);
       Board.deleteRectangle(rec2);
       Board.addRectangle(rectangle);
@@ -27,5 +27,6 @@ public class Utility {
     if (c1.color.equals(c2.color)) {
       return c1;
     }
+    return c2;
   }
 }

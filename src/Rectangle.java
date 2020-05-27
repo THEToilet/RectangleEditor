@@ -7,12 +7,12 @@ public class Rectangle {
 	public int height;
 	public Color color;
 
-	public Rectangle(int x, int y, int width, int height, String c) {
+	public Rectangle(int x, int y, int width, int height, Color c) {
 		this.x = x;
 		this.y = y;
 		this.width = width;
 		this.height = height;
-		this.color = new Color(c);
+		this.color = c;
 	}
 
 	public String show() {
