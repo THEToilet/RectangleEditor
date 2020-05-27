@@ -64,7 +64,7 @@ public class Command {
           System.out.println("Please Input Num");
           int rec1 = scanner.nextInt();
           int rec2 = scanner.nextInt();
-          Board.intersec(rec1, rec2);
+          Utility.intersec(rec1, rec2);
           break;
         case DISPLAYBOARD:
           Board.showRectangles();
