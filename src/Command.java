@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.lang.IllegalArgumentException;
+import java.util.InputMismatchException;
 
 public class Command {
 
@@ -22,37 +23,48 @@ public class Command {
 
       switch (action) {
         case CREATE:
-          while (true) {
-            System.out.println("Please Input x y width height");
-            int x = scanner.nextInt();
-            int y = scanner.nextInt();
-            int width = scanner.nextInt();
-            int height = scanner.nextInt();
+          int x, y, width, height;
+          String bc;
+          System.out.println("Please Input x y width height");
+          try {
+            x = scanner.nextInt();
+            y = scanner.nextInt();
+            width = scanner.nextInt();
+            height = scanner.nextInt();
             System.out.println("Please Input Color RED/BLUE/YELLOW/GRAY");
-            String bc = scanner.next();
-            Colors c;
-            try {
-              c = Colors.valueOf(bc);
-            } catch (IllegalArgumentException exception) {
-              System.out.println("Commnad not found");
-              continue;
-            }
-            Rectangle rectangle = new Rectangle(x, y, width, height, new Color(c));
-            if (Board.isItOverTheBoard(rectangle)) {
-              System.out.println("NOT SUCCSESS");
-            }
-            Board.addRectangle(rectangle);
-            System.out.println("SUCCSESS");
-            break;
+            bc = scanner.next();
+          } catch (InputMismatchException exception) {
+            System.out.println("Please try again");
+            continue;
           }
+          Colors c;
+          try {
+            c = Colors.valueOf(bc);
+          } catch (IllegalArgumentException exception) {
+            System.out.println("Commnad not found");
+            continue;
+          }
+          Rectangle rectangle = new Rectangle(x, y, width, height, new Color(c));
+          if (Board.isItOverTheBoard(rectangle)) {
+            System.out.println("NOT SUCCSESS");
+          }
+          Board.addRectangle(rectangle);
+          System.out.println("SUCCSESS");
           break;
         case MOVE:
           Board.showRectangles();
           System.out.println("Please Input Num");
-          int n = scanner.nextInt();
-          System.out.println("Please Input x y");
-          int x0 = scanner.nextInt();
-          int y0 = scanner.nextInt();
+          int n, x0, y0;
+          try {
+
+            n = scanner.nextInt();
+            System.out.println("Please Input x y");
+            x0 = scanner.nextInt();
+            y0 = scanner.nextInt();
+          } catch (InputMismatchException exception) {
+            System.out.println("Please try again");
+            continue;
+          }
           Rectangle tmpr = Board.getRectangl(n);
           Board.getRectangl(n).move(x0, y0);
           if (Board.isItOverTheBoard(tmpr)) {
@@ -62,10 +74,17 @@ public class Command {
         case EXPAND:
           Board.showRectangles();
           System.out.println("Please Input Num");
-          int nu = scanner.nextInt();
-          System.out.println("Please Input x y");
-          float mx = scanner.nextFloat();
-          float my = scanner.nextFloat();
+          int nu;
+          float mx, my;
+          try {
+            nu = scanner.nextInt();
+            System.out.println("Please Input x y");
+            mx = scanner.nextFloat();
+            my = scanner.nextFloat();
+          } catch (InputMismatchException exception) {
+            System.out.println("Please try again");
+            continue;
+          }
           Rectangle tr = Board.getRectangl(nu);
           Board.getRectangl(nu).expand(mx, my);
           if (Board.isItOverTheBoard(tr)) {
@@ -77,7 +96,13 @@ public class Command {
         case DELETE:
           Board.showRectangles();
           System.out.println("Please Input Num");
-          int num = scanner.nextInt();
+          int num;
+          try {
+            num = scanner.nextInt();
+          } catch (InputMismatchException exception) {
+            System.out.println("Please try again");
+            continue;
+          }
           Board.deleteRectangle(num);
           System.out.println("SUCCSESS");
           break;
@@ -87,8 +112,14 @@ public class Command {
         case INTERSEC:
           Board.showRectangles();
           System.out.println("Please Input Num");
-          int rec1 = scanner.nextInt();
-          int rec2 = scanner.nextInt();
+          int rec1, rec2;
+          try {
+            rec1 = scanner.nextInt();
+            rec2 = scanner.nextInt();
+          } catch (InputMismatchException exception) {
+            System.out.println("Please try again");
+            continue;
+          }
           Utility.intersec(rec1, rec2);
           break;
         case DISPLAYBOARD:
