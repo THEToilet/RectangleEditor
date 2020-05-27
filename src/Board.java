@@ -24,4 +24,8 @@ public class Board {
     }
   }
 
+  public static Rectangle getRectangl(int num) {
+    return rectangles.get(num);
+  }
+
 }

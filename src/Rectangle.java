@@ -14,4 +14,9 @@ public class Rectangle {
 	public String show() {
 		return "{ " + "x: " + this.x + " y: " + this.y + " width: " + this.width + " height: " + this.height + " }";
 	}
+
+	public void move(int x, int y) {
+		this.x += x;
+		this.y += y;
+	}
 }
