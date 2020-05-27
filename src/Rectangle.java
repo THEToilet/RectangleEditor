@@ -17,7 +17,7 @@ public class Rectangle {
 
 	public String show() {
 		return "{ " + "x: " + this.x + " y: " + this.y + " width: " + this.width + " height: " + this.height + "color:"
-				+ this.color + " }";
+				+ this.color.toString() + " }";
 	}
 
 	public void move(int x, int y) {
