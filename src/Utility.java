@@ -1,6 +1,5 @@
 import java.lang.Math;
 
-import Color.Colors;
 
 public class Utility {
   public static void intersec(int rec1, int rec2) {
