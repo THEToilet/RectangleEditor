@@ -38,4 +38,12 @@ public class Board {
     }
     return ok;
   }
+
+  public static Boolean isItOverTheBoard(Rectangle r) {
+    boolean ans = false;
+    if (r.x < 0 && r.x + r.width > 500 && r.y < 0 && r.y + r.height > 400) {
+      ans = true;
+    }
+    return ans;
+  }
 }
