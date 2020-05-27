@@ -7,14 +7,16 @@ public class Utility {
   }
 
   public boolean isOverlapping(Rectangle other) {
-    if (this.topRight.getY() < other.bottomLeft.getY()
-      || this.bottomLeft.getY() > other.topRight.getY()) {
-        return false;
+    if (this.topRight.getY() < other.bottomLeft.getY() || this.bottomLeft.getY() > other.topRight.getY()) {
+      return false;
     }
-    if (this.topRight.getX() < other.bottomLeft.getX()
-      || this.bottomLeft.getX() > other.topRight.getX()) {
-        return false;
+    if (this.topRight.getX() < other.bottomLeft.getX() || this.bottomLeft.getX() > other.topRight.getX()) {
+      return false;
     }
     return true;
-}
+  }
+
+  public Color combineColors(Color c1, Color c2){
+    return Color;
+  }
 }
