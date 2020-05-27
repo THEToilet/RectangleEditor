@@ -18,4 +18,10 @@ public class Board {
     rectangles.remove(num);
   }
 
+  public static void deleteAllRectangle() {
+    for (int i = 0; i < rectangles.size(); i++) {
+      rectangles.remove(i);
+    }
+  }
+
 }
