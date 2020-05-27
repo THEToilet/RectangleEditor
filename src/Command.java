@@ -21,10 +21,13 @@ public class Command {
           int y = scanner.nextInt();
           int width = scanner.nextInt();
           int height = scanner.nextInt();
+          System.out.println("Please Input Color RED/BLUE/YELLOW/GRAY");
           String bc = scanner.nextLine();
           Color c = new Color(bc);
           Rectangle rectangle = new Rectangle(x, y, width, height, c);
-          Board.addRectangle(rectangle);
+          if (Board.isItOverTheBoard(rectangle)) {
+            Board.addRectangle(rectangle);
+          }
           System.out.println("SUCCSESS");
           break;
         case MOVE:
@@ -34,7 +37,11 @@ public class Command {
           System.out.println("Please Input x y");
           int x0 = scanner.nextInt();
           int y0 = scanner.nextInt();
+          Rectangle tmpr = Board.getRectangl(n);
           Board.getRectangl(n).move(x0, y0);
+          if (Board.isItOverTheBoard(tmpr)) {
+            Board.getRectangl(n).move(-1 * x0, -1 * y0);
+          }
           break;
         case EXPAND:
           Board.showRectangles();
@@ -43,7 +50,11 @@ public class Command {
           System.out.println("Please Input x y");
           float mx = scanner.nextFloat();
           float my = scanner.nextFloat();
+          Rectangle tr = Board.getRectangl(nu);
           Board.getRectangl(nu).expand(mx, my);
+          if (Board.isItOverTheBoard(tr)) {
+            Board.getRectangl(nu).expand(1 / mx, 1 / my);
+          }
           break;
         case SHRINK:
           break;
