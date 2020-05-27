@@ -1,4 +1,3 @@
-import Color.Colors;
 import java.lang.Math;
 
 public class Utility {
@@ -6,7 +5,8 @@ public class Utility {
     Rectangle r1 = Board.getRectangl(rec1);
     Rectangle r2 = Board.getRectangl(rec2);
     if (isOverlapping(r1, r2)) {
-      Rectangle rectangle = new Rectangle(min(r1.x, r2.x), y, width, height, combineColors(r1.color, r2.color));
+      Rectangle rectangle = new Rectangle(Math.max(r1.x, r2.x), Math.min(r1.y, r2.y), Math.abs(Math.max(r1.x, r2.x)), Math.abs(Math.max(r1.x, r2.x)),
+          combineColors(r1.color, r2.color));
       Board.deleteRectangle(rec1);
       Board.deleteRectangle(rec2);
       Board.addRectangle(rectangle);
