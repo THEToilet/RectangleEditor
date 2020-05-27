@@ -41,7 +41,7 @@ public class Command {
           try {
             c = Colors.valueOf(bc);
           } catch (IllegalArgumentException exception) {
-            System.out.println("Commnad not found");
+            System.out.println("Please try again");
             continue;
           }
           Rectangle rectangle = new Rectangle(x, y, width, height, new Color(c));
