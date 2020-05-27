@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.lang.IllegalArgumentException;
 
 public class Command {
 
@@ -12,24 +13,38 @@ public class Command {
       System.out.printf(">> ");
       Scanner scanner = new Scanner(System.in);
       String ac = scanner.nextLine();
-      action = Action.valueOf(ac);
+      try {
+        action = Action.valueOf(ac);
+      } catch (IllegalArgumentException exception) {
+        System.out.println("Commnad not found");
+        continue;
+      }
 
       switch (action) {
         case CREATE:
-          System.out.println("Please Input x y width height");
-          int x = scanner.nextInt();
-          int y = scanner.nextInt();
-          int width = scanner.nextInt();
-          int height = scanner.nextInt();
-          System.out.println("Please Input Color RED/BLUE/YELLOW/GRAY");
-          String bc = scanner.next();
-          Color c = new Color(bc);
-          Rectangle rectangle = new Rectangle(x, y, width, height, c);
-          if (Board.isItOverTheBoard(rectangle)) {
-            System.out.println("NOT SUCCSESS");
+          while (true) {
+            System.out.println("Please Input x y width height");
+            int x = scanner.nextInt();
+            int y = scanner.nextInt();
+            int width = scanner.nextInt();
+            int height = scanner.nextInt();
+            System.out.println("Please Input Color RED/BLUE/YELLOW/GRAY");
+            String bc = scanner.next();
+            Colors c;
+            try {
+              c = Colors.valueOf(bc);
+            } catch (IllegalArgumentException exception) {
+              System.out.println("Commnad not found");
+              continue;
+            }
+            Rectangle rectangle = new Rectangle(x, y, width, height, new Color(c));
+            if (Board.isItOverTheBoard(rectangle)) {
+              System.out.println("NOT SUCCSESS");
+            }
+            Board.addRectangle(rectangle);
+            System.out.println("SUCCSESS");
+            break;
           }
-          Board.addRectangle(rectangle);
-          System.out.println("SUCCSESS");
           break;
         case MOVE:
           Board.showRectangles();

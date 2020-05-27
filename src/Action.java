@@ -4,7 +4,6 @@ public enum Action {
     public String toString() {
       return name().toLowerCase();
     }
-
   };
 
   @Override

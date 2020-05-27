@@ -6,12 +6,13 @@ public class Utility {
     Rectangle r2 = Board.getRectangl(rec2);
     if (isOverlapping(r1, r2)) {
       Rectangle rectangle = new Rectangle(Math.max(r1.x, r2.x), Math.min(r1.y, r2.y), Math.abs(Math.max(r1.x, r2.x)),
-          Math.abs(Math.max(r1.x, r2.x)), combineColors(r1.color, r2.color));
+          Math.abs(Math.max(r1.x, r2.x)), new Color(combineColors(r1.color, r2.color)));
       System.out.println("Yes");
       Board.deleteRectangle(rec1);
       Board.deleteRectangle(rec2 - 1);
       Board.addRectangle(rectangle);
     }
+    System.out.println("Oh");
   }
 
   public static boolean isOverlapping(Rectangle rec1, Rectangle rec2) {
@@ -24,20 +25,20 @@ public class Utility {
     return true;
   }
 
-  public static Color combineColors(Color c1, Color c2) {
+  public static Colors combineColors(Color c1, Color c2) {
     if (c1.color.equals(c2.color)) {
-      return new Color("GRAY");
+      return Colors.GRAY;
     } else if ((c1.color == Colors.YELLOW && c1.color == Colors.BLUE)
         || (c1.color == Colors.BLUE && c1.color == Colors.YELLOW)) {
-      return new Color("GREEN");
+      return Colors.GREEN;
     } else if ((c1.color == Colors.YELLOW && c1.color == Colors.RED)
         || (c1.color == Colors.RED && c1.color == Colors.YELLOW)) {
-      return new Color("ORANGE");
+      return Colors.ORANGE;
     } else if ((c1.color == Colors.RED && c1.color == Colors.BLUE)
         || (c1.color == Colors.BLUE && c1.color == Colors.RED)) {
-      return new Color("MAGENTA");
+      return Colors.MAGENTA;
     } else {
-      return new Color("CYAN");
+      return Colors.CYAN;
     }
   }
 }
