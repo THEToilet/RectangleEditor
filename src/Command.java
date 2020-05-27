@@ -43,6 +43,7 @@ public class Command {
           System.out.println("SUCCSESS");
           break;
         case DELETEALL:
+          Board.deleteAllRectangle();
           break;
         case INTERSEC:
           break;
