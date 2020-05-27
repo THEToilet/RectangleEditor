@@ -1,3 +1,5 @@
+import java.lang.Math;
+
 public class Rectangle {
 	private int x;
 	private int y;
@@ -18,5 +20,10 @@ public class Rectangle {
 	public void move(int x, int y) {
 		this.x += x;
 		this.y += y;
+	}
+
+	public void expand(float mx, float my) {
+		this.width = Math.round(mx * this.width);
+		this.height = Math.round(my * this.height);
 	}
 }

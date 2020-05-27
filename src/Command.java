@@ -36,9 +36,16 @@ public class Command {
           System.out.println("Please Input x y");
           int x0 = scanner.nextInt();
           int y0 = scanner.nextInt();
-          Board.getRectangl(n).move(x0,y0);
+          Board.getRectangl(n).move(x0, y0);
           break;
         case EXPAND:
+          Board.showRectangles();
+          System.out.println("Please Input Num");
+          int nu = scanner.nextInt();
+          System.out.println("Please Input x y");
+          float mx = scanner.nextFloat();
+          float my = scanner.nextFloat();
+          Board.getRectangl(nu).expand(mx, my);
           break;
         case SHRINK:
           break;
