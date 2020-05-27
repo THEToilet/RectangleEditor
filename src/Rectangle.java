@@ -5,12 +5,14 @@ public class Rectangle {
 	private int y;
 	private int width;
 	private int height;
+	private Color color;
 
-	public Rectangle(int x, int y, int width, int height) {
+	public Rectangle(int x, int y, int width, int height, String c) {
 		this.x = x;
 		this.y = y;
 		this.width = width;
 		this.height = height;
+		this.color = new Color(c);
 	}
 
 	public String show() {
