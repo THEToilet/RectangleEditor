@@ -52,7 +52,11 @@ public class Command {
             System.out.println("There's the same rectangle.");
             break;
           }
-          Board.addRectangle(rectangle);
+          if (Board.rectangles.size() <= 10) {
+            Board.addRectangle(rectangle);
+          } else {
+            System.out.println("A lot.");
+          }
           System.out.println("SUCCSESS");
           break;
         case MOVE:
