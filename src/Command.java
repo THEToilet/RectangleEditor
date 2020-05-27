@@ -30,6 +30,12 @@ public class Command {
           System.out.println("SUCCSESS");
           break;
         case MOVE:
+          Board.showRectangles();
+          System.out.println("Please Input Num");
+          int n = scanner.nextInt();
+          System.out.println("Please Input x y");
+          int x0 = scanner.nextInt();
+          int y0 = scanner.nextInt();
           break;
         case EXPAND:
           break;
