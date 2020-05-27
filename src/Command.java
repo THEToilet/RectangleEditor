@@ -22,12 +22,13 @@ public class Command {
           int width = scanner.nextInt();
           int height = scanner.nextInt();
           System.out.println("Please Input Color RED/BLUE/YELLOW/GRAY");
-          String bc = scanner.nextLine();
+          String bc = scanner.next();
           Color c = new Color(bc);
           Rectangle rectangle = new Rectangle(x, y, width, height, c);
           if (Board.isItOverTheBoard(rectangle)) {
-            Board.addRectangle(rectangle);
+            System.out.println("NOT SUCCSESS");
           }
+          Board.addRectangle(rectangle);
           System.out.println("SUCCSESS");
           break;
         case MOVE:
@@ -83,6 +84,7 @@ public class Command {
           scanner.close();
           break;
         default:
+          System.out.println("Command not found");
           break;
       }
     }
