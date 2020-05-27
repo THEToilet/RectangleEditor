@@ -2,21 +2,23 @@ public class Utility {
   public static void intersec(int rec1, int rec2) {
     Rectangle r1 = Board.getRectangl(rec1);
     Rectangle r2 = Board.getRectangl(rec2);
-    Rectangle rectangle = new Rectangle(x, y, width, height);
-    Board.addRectangle(rectangle);
+    if (isOverlapping(r1, r2)) {
+      Rectangle rectangle = new Rectangle(x, y, width, height);
+      Board.addRectangle(rectangle);
+    }
   }
 
-  public boolean isOverlapping(Rectangle other) {
-    if (this.topRight.getY() < other.bottomLeft.getY() || this.bottomLeft.getY() > other.topRight.getY()) {
+  public static boolean isOverlapping(Rectangle rec1, Rectangle rec2) {
+    if (rec1.y < rec2.y - rec2.height || rec1.y - rec1.height > rec2.y) {
       return false;
     }
-    if (this.topRight.getX() < other.bottomLeft.getX() || this.bottomLeft.getX() > other.topRight.getX()) {
+    if (rec1.x + rec1.width < rec2.x || rec1.x > rec2.x + rec2.width) {
       return false;
     }
     return true;
   }
 
-  public Color combineColors(Color c1, Color c2){
+  public Color combineColors(Color c1, Color c2) {
     return Color;
   }
 }

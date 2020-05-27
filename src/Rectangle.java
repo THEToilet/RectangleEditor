@@ -1,11 +1,11 @@
 import java.lang.Math;
 
 public class Rectangle {
-	private int x;
-	private int y;
-	private int width;
-	private int height;
-	private Color color;
+	public int x;
+	public int y;
+	public int width;
+	public int height;
+	public Color color;
 
 	public Rectangle(int x, int y, int width, int height, String c) {
 		this.x = x;
