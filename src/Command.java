@@ -2,10 +2,6 @@ import java.util.Scanner;
 
 public class Command {
 
-  enum Action {
-    CREATE, MOVE, EXPAND, SHRINK, DELETE, DELETEALL, INTERSEC, DISPLAYBOARD, EXIT, NONE
-  }
-
   public static void Start() {
     String acString = "CREATE MOVE EXPAND SHRINK DELETE\nDELETEALL INTERSEC DISPLAYBOARD EXIT\n";
 
