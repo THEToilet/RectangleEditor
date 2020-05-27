@@ -5,7 +5,7 @@ import java.util.InputMismatchException;
 public class Command {
 
   public static void Start() {
-    String acString = "CREATE MOVE EXPAND SHRINK DELETE\nDELETEALL INTERSEC DISPLAYBOARD EXIT\n";
+    String acString = "CREATE MOVE EXPAND DELETE\nDELETEALL INTERSEC DISPLAYBOARD EXIT\n";
 
     Action action = Action.NONE;
 
@@ -106,8 +106,6 @@ public class Command {
             Board.getRectangl(nu).expand(1 / mx, 1 / my);
             System.out.println("There's the same rectangle.");
           }
-          break;
-        case SHRINK:
           break;
         case DELETE:
           Board.showRectangles();
