@@ -28,4 +28,14 @@ public class Board {
     return rectangles.get(num);
   }
 
+  public static Boolean hasSameRectangles(Rectangle r) {
+    boolean ok = false;
+    for (int i = 0; i < rectangles.size(); i++) {
+      Rectangle tmpr = rectangles.get(i);
+      if (tmpr.x == r.x && tmpr.y == r.y && tmpr.width == r.width && tmpr.height == r.height) {
+        ok = true;
+      }
+    }
+    return ok;
+  }
 }
