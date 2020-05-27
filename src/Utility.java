@@ -1,9 +1,14 @@
+import Color.Colors;
+import java.lang.Math;
+
 public class Utility {
   public static void intersec(int rec1, int rec2) {
     Rectangle r1 = Board.getRectangl(rec1);
     Rectangle r2 = Board.getRectangl(rec2);
     if (isOverlapping(r1, r2)) {
-      Rectangle rectangle = new Rectangle(x, y, width, height);
+      Rectangle rectangle = new Rectangle(min(r1.x, r2.x), y, width, height, combineColors(r1.color, r2.color));
+      Board.deleteRectangle(rec1);
+      Board.deleteRectangle(rec2);
       Board.addRectangle(rectangle);
     }
   }
@@ -18,7 +23,9 @@ public class Utility {
     return true;
   }
 
-  public Color combineColors(Color c1, Color c2) {
-    return Color;
+  public static Color combineColors(Color c1, Color c2) {
+    if (c1.color.equals(c2.color)) {
+      return c1;
+    }
   }
 }

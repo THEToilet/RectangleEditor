@@ -1,9 +1,9 @@
 public class Color {
   enum Colors {
-    RED, BLUE, YELLOW, GRAY, CYAN, WHITE
+    RED, BLUE, YELLOW, GRAY, CYAN, WHITE, GREEN, ORANGE, MAGENTA
   };
 
-  private Colors color;
+  public Colors color;
 
   public Color(String c) {
     this.color = Colors.valueOf(c);
