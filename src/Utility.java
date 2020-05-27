@@ -1,5 +1,7 @@
 import java.lang.Math;
 
+import Color.Colors;
+
 public class Utility {
   public static void intersec(int rec1, int rec2) {
     Rectangle r1 = Board.getRectangl(rec1);
@@ -25,8 +27,18 @@ public class Utility {
 
   public static Color combineColors(Color c1, Color c2) {
     if (c1.color.equals(c2.color)) {
-      return c1;
+      return new Color("GRAY");
+    } else if ((c1.color == Colors.YELLOW && c1.color == Colors.BLUE)
+        || (c1.color == Colors.BLUE && c1.color == Colors.YELLOW)) {
+      return new Color("GREEN");
+    } else if ((c1.color == Colors.YELLOW && c1.color == Colors.RED)
+        || (c1.color == Colors.RED && c1.color == Colors.YELLOW)) {
+      return new Color("ORANGE");
+    } else if ((c1.color == Colors.RED && c1.color == Colors.BLUE)
+        || (c1.color == Colors.BLUE && c1.color == Colors.RED)) {
+      return new Color("MAGENTA");
+    } else {
+      return new Color("CYAN");
     }
-    return c2;
   }
 }
