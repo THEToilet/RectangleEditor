@@ -28,6 +28,10 @@ public class Board {
     return rectangles.get(num);
   }
 
+  public static ArrayList<Rectangle> getRectangles(int num) {
+    return rectangles;
+  }
+
   public static Boolean hasSameRectangles(Rectangle r) {
     boolean ok = false;
     for (int i = 0; i < rectangles.size(); i++) {
