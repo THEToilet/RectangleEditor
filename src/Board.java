@@ -32,9 +32,27 @@ public class Board {
     return rectangles;
   }
 
+  public static int getRectanglSize() {
+    return rectangles.size();
+  }
+
   public static Boolean hasSameRectangles(Rectangle r) {
     boolean ok = false;
     for (int i = 0; i < rectangles.size(); i++) {
+      Rectangle tmpr = rectangles.get(i);
+      if (tmpr.x == r.x && tmpr.y == r.y && tmpr.width == r.width && tmpr.height == r.height) {
+        ok = true;
+      }
+    }
+    return ok;
+  }
+
+  public static Boolean hasSameRectangles2(Rectangle r, int n) {
+    boolean ok = false;
+    for (int i = 0; i < rectangles.size(); i++) {
+      if (i == n) {
+        continue;
+      }
       Rectangle tmpr = rectangles.get(i);
       if (tmpr.x == r.x && tmpr.y == r.y && tmpr.width == r.width && tmpr.height == r.height) {
         ok = true;

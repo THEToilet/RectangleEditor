@@ -60,6 +60,10 @@ public class Command {
           System.out.println("SUCCSESS");
           break;
         case MOVE:
+          if (Board.getRectanglSize() == 0) {
+            System.out.println("No Rectangle");
+            break;
+          }
           Board.showRectangles();
           System.out.println("Please Input Num");
           int n, x0, y0;
@@ -74,17 +78,21 @@ public class Command {
             continue;
           }
           Rectangle tmpr = Board.getRectangl(n);
-          Board.getRectangl(n).move(x0, y0);
+          tmpr.move(x0, y0);
           if (Board.isItOverTheBoard(tmpr)) {
             Board.getRectangl(n).move(-1 * x0, -1 * y0);
             System.out.println("It's out of range.");
-          } else if (Board.hasSameRectangles(tmpr)) {
+          } else if (Board.hasSameRectangles2(tmpr, n)) {
             Board.getRectangl(n).move(-1 * x0, -1 * y0);
             System.out.println("There's the same rectangle.");
             break;
           }
           break;
         case EXPAND:
+          if (Board.getRectanglSize() == 0) {
+            System.out.println("No Rectangle");
+            break;
+          }
           Board.showRectangles();
           System.out.println("Please Input Num");
           int nu;
@@ -99,15 +107,19 @@ public class Command {
             continue;
           }
           Rectangle tr = Board.getRectangl(nu);
-          Board.getRectangl(nu).expand(mx, my);
+          tr.expand(mx, my);
           if (Board.isItOverTheBoard(tr)) {
             Board.getRectangl(nu).expand(1 / mx, 1 / my);
-          } else if (Board.hasSameRectangles(tr)) {
+          } else if (Board.hasSameRectangles2(tr, nu)) {
             Board.getRectangl(nu).expand(1 / mx, 1 / my);
             System.out.println("There's the same rectangle.");
           }
           break;
         case DELETE:
+          if (Board.getRectanglSize() == 0) {
+            System.out.println("No Rectangle");
+            break;
+          }
           Board.showRectangles();
           System.out.println("Please Input Num");
           int num;
@@ -121,9 +133,17 @@ public class Command {
           System.out.println("SUCCSESS");
           break;
         case DELETEALL:
+          if (Board.getRectanglSize() == 0) {
+            System.out.println("No Rectangle");
+            break;
+          }
           Board.deleteAllRectangle();
           break;
         case INTERSEC:
+          if (Board.getRectanglSize() < 2) {
+            System.out.println("No Rectangle");
+            break;
+          }
           Board.showRectangles();
           System.out.println("Please Input Num");
           int rec1, rec2;
@@ -137,6 +157,10 @@ public class Command {
           Utility.intersec(rec1, rec2);
           break;
         case DISPLAYBOARD:
+          if (Board.getRectanglSize() == 0) {
+            System.out.println("No Rectangle");
+            break;
+          }
           Board.showRectangles();
           break;
         case EXIT:
