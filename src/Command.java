@@ -78,15 +78,22 @@ public class Command {
             continue;
           }
           Rectangle tmpr = Board.getRectangl(n);
-          tmpr.move(x0, y0);
-          if (Board.isItOverTheBoard(tmpr)) {
-            Board.getRectangl(n).move(-1 * x0, -1 * y0);
+          Rectangle rec = new Rectangle(tmpr.x + x0, tmpr.y + y0, tmpr.width, tmpr.height, new Color(tmpr.color.color));
+          if (Board.isItOverTheBoard(rec)) {
             System.out.println("It's out of range.");
-          } else if (Board.hasSameRectangles2(tmpr, n)) {
-            Board.getRectangl(n).move(-1 * x0, -1 * y0);
+            break;
+          } else if (Board.hasSameRectangles(rec)) {
             System.out.println("There's the same rectangle.");
             break;
           }
+          if (Board.rectangles.size() <= 10) {
+            Board.deleteRectangle(n);
+            Board.addRectangle(rec);
+          } else {
+            System.out.println("A lot.");
+            break;
+          }
+          System.out.println("SUCCSESS");
           break;
         case EXPAND:
           if (Board.getRectanglSize() == 0) {
@@ -107,13 +114,22 @@ public class Command {
             continue;
           }
           Rectangle tr = Board.getRectangl(nu);
-          tr.expand(mx, my);
-          if (Board.isItOverTheBoard(tr)) {
-            Board.getRectangl(nu).expand(1 / mx, 1 / my);
-          } else if (Board.hasSameRectangles2(tr, nu)) {
-            Board.getRectangl(nu).expand(1 / mx, 1 / my);
+          Rectangle re = new Rectangle(tr.x, tr.y, Math.round(tr.width * mx), Math.round(tr.height * my),
+              new Color(tr.color.color));
+          if (Board.isItOverTheBoard(re)) {
+            System.out.println("It's out of range.");
+            break;
+          } else if (Board.hasSameRectangles(re)) {
             System.out.println("There's the same rectangle.");
+            break;
           }
+          if (Board.rectangles.size() <= 10) {
+            Board.deleteRectangle(nu);
+            Board.addRectangle(re);
+          } else {
+            System.out.println("A lot.");
+          }
+          System.out.println("SUCCSESS");
           break;
         case DELETE:
           if (Board.getRectanglSize() == 0) {

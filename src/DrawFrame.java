@@ -22,8 +22,6 @@ public class DrawFrame extends Frame {
 
   public void paint(Graphics g) {
     rectangles = Board.getRectangles();
-    g.setColor(Color.red);
-    g.fillRect(0, 0, 100, 100);
     for (int i = 0; i < rectangles.size(); i++) {
       Rectangle rectangle = rectangles.get(i);
       g.setColor(changeColor(rectangle.color.color));
