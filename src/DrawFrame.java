@@ -26,14 +26,30 @@ public class DrawFrame extends Frame {
     g.fillRect(0, 0, 100, 100);
     for (int i = 0; i < rectangles.size(); i++) {
       Rectangle rectangle = rectangles.get(i);
-      System.out.println(rectangle.show());
+      g.setColor(changeColor(rectangle.color.color));
       g.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
     }
   }
 
-  public void run() {
-    while (true) {
-      repaint();
+  private java.awt.Color changeColor(Colors c) {
+    switch (c) {
+      case BLUE:
+        return Color.BLUE;
+      case RED:
+        return Color.RED;
+      case YELLOW:
+        return Color.YELLOW;
+      case GRAY:
+        return Color.GRAY;
+      case GREEN:
+        return Color.GREEN;
+      case ORANGE:
+        return Color.ORANGE;
+      case MAGENTA:
+        return Color.MAGENTA;
+      default:
+        return Color.CYAN;
     }
+
   }
 }
