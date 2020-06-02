@@ -28,7 +28,7 @@ public class Board {
     return rectangles.get(num);
   }
 
-  public static ArrayList<Rectangle> getRectangles(int num) {
+  public static ArrayList<Rectangle> getRectangles() {
     return rectangles;
   }
 

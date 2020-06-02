@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 
 public class Command {
 
-  public static void Start() {
+  public static void Start(DrawFrame f) {
     String acString = "CREATE MOVE EXPAND DELETE\nDELETEALL INTERSEC DISPLAYBOARD EXIT\n";
 
     Action action = Action.NONE;
@@ -147,6 +147,7 @@ public class Command {
           System.out.println("Command not found");
           break;
       }
+      f.repaint();
     }
   }
 
