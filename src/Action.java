@@ -1,3 +1,5 @@
+package EIEV3.src;
+
 public enum Action {
   CREATE, MOVE, EXPAND, SHRINK, DELETE, DELETEALL, INTERSEC, DISPLAYBOARD, EXIT, NONE {
     @Override

@@ -1,3 +1,5 @@
+package EIEV3.src;
+
 public enum Colors {
   RED, BLUE, YELLOW, GRAY, CYAN, WHITE, GREEN, ORANGE, MAGENTA {
     @Override

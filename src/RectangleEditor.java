@@ -1,3 +1,5 @@
+package EIEV3.src;
+
 public class RectangleEditor {
 
 	static public void main(String[] args) {

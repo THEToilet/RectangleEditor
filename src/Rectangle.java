@@ -1,3 +1,5 @@
+package EIEV3.src;
+
 public class Rectangle {
 	public int x;
 	public int y;
